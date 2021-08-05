@@ -4,7 +4,7 @@
     It requires an existing Azure VM to already be onboarded to the solution as it uses this information to onboard the
     new VM to the same Log Analytics workspace and Automation Account.
     This Runbook needs to be run from the Automation account that you wish to connect the new VM to. It depends on
-    the Enable-AutomationSolution runbook that is available from the gallery and
+    the Enable-AutomationSolutionAz runbook that is available from the gallery and
     https://github.com/mortenlerudjordet/Onboards-an-azure-vm-to-update-or-change-tracking-using-az/blob/main/Enable-AutomationSolutionAz.ps1. If this Runbook is
     not present, it will be automatically imported.
 
@@ -18,8 +18,8 @@
     It requires an existing Azure VM to already be onboarded to the solution as it uses this information to onboard the
     new VM to the same Log Analytics workspace and Automation Account.
     This Runbook needs to be run from the Automation account that you wish to connect the new VM to. It depends on
-    the Enable-AutomationSolution runbook that is available from the gallery and
-    https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Enable-AutomationSolution.ps1. If this Runbook is
+    the Enable-AutomationSolutionAz runbook that is available from the gallery and
+    https://github.com/mortenlerudjordet/Onboards-an-azure-vm-to-update-or-change-tracking-using-az/blob/main/Enable-AutomationSolutionAz.ps1. If this Runbook is
     not present, it will be automatically imported.
 
 .COMPONENT
