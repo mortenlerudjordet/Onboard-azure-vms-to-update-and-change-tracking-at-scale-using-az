@@ -5,7 +5,7 @@
     new VM to the same Log Analytics workspace and Automation Account.
     This Runbook needs to be run from the Automation account that you wish to connect the new VM to. It depends on
     the Enable-AutomationSolution runbook that is available from the gallery and
-    https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Enable-AutomationSolution.ps1. If this Runbook is
+    https://github.com/mortenlerudjordet/Onboards-an-azure-vm-to-update-or-change-tracking-using-az/blob/main/Enable-AutomationSolutionAz.ps1. If this Runbook is
     not present, it will be automatically imported.
 
     To set what Log Analytics workspace to use for Update and Change Tracking management (bypassing the logic that search for an existing onboarded VM),
@@ -197,7 +197,7 @@ try
         $LocalFolder = Join-Path $Env:SystemDrive (New-Guid).Guid
         New-Item -ItemType directory $LocalFolder -Force | Write-Verbose
 
-        (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/mortenlerudjordet/runbooks/master/Utility/ARM/$DependencyRunbookName.ps1", "$LocalFolder\$DependencyRunbookName.ps1")
+        (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/mortenlerudjordet/Onboards-an-azure-vm-to-update-or-change-tracking-using-az/main/$DependencyRunbookName.ps1", "$LocalFolder\$DependencyRunbookName.ps1")
         Unblock-File -Path "$LocalFolder\$DependencyRunbookName.ps1" -ErrorAction Stop | Write-Verbose
         Import-AzAutomationRunbook -ResourceGroupName $AutomationResourceGroupName `
             -AutomationAccountName $AutomationAccountName -Path $LocalFolder\$DependencyRunbookName.ps1 `
